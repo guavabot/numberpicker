@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 
 public class NumberPickerPreference extends DialogPreference {
     private NumberPicker mPicker;
@@ -43,6 +44,7 @@ public class NumberPickerPreference extends DialogPreference {
         mPicker = (NumberPicker) view.findViewById(R.id.pref_num_picker);
         mPicker.setRange(mStartRange, mEndRange);
         mPicker.setCurrent(getValue());
+        mPicker.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
     }
 
     @Override
